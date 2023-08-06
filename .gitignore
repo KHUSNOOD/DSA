@@ -1,32 +1,58 @@
-# Prerequisites
-*.d
+// All prime number between a,b
+void is_prime(int x){
+    int count=0;
+    for(int i=2; i<x; i++){
+        if(x%i==0){
+           count++; 
+        }
+    }
+    if(count==0){
+        cout<<x<<" ";
+    }
+}
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
 
-# Precompiled Headers
-*.gch
-*.pch
+// N Fibonaccci number printing
+void fibo(int n){
+    long long int t1=0, t2=1;
+    long long int temp;
+    for(int i=1; i<=n; i++){
+        temp=t1+t2;
+        cout<<t1<<" ";
+        t1=t2;
+        t2=temp;
+    }
+}
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
 
-# Fortran module files
-*.mod
-*.smod
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+// Factorial of a number N;
+int  factorial(int n){
+    int temp=1;
+    for(int i=n; i>=1; i--){
+        temp=temp*i;
+    }
+    return temp;
+}
 
-# Executables
-*.exe
-*.out
-*.app
+
+// Sum of N natural numbers;
+int sum(int n){
+    int sum=0;
+    for(int i=1; i<=n; i++){
+        sum+=i;
+    }
+    return sum;
+}
+
+
+// Bool result in cheacking a pythagoras triplet;
+bool pythog(int x,int y, int z){
+    int maxx=max(x,max(y,z));
+    
+    if(maxx*maxx==x*x+y*y ||maxx*maxx==x*x+z*z || maxx*maxx==z*z+y*y ){
+        return true;
+    }
+    return false;
+}
+
