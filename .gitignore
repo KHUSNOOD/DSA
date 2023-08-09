@@ -103,3 +103,52 @@ int  long_subarr(int n, int arr[]){
 }
 
 
+
+// max-sum of  subarray in an array;
+int  subarr_maxsum(int n, int arr[]){
+    int max_sum=0;
+    for(int i=0; i<n; i++){
+        for(int j=i; j<n; j++){
+             int sum=0;
+            for(int k=i; k<=j; k++){
+                sum+=arr[k];
+            }
+            if(sum>max_sum){
+                max_sum=sum;
+            }
+        }
+    }
+    return max_sum;
+}
+
+
+// Rearring the array terms by all even numbers following by all odd numbers;
+void evenfirst(int n, int arr[]){
+    vector<int >vec1;
+    vector<int>vec2;
+    for(int i=0; i<n; i++){
+        if(arr[i]%2==0){
+            vec1.push_back(arr[i]);
+        }
+        else{
+            vec2.push_back(arr[i]);
+        }
+    }
+     for(int j=0; j<vec2.size(); j++){
+        
+            vec1.push_back(vec2[j]);
+        
+    }
+    for(int k=0; k<n; k++){
+        cout<<vec1[k]<<" ";
+    }
+}
+
+
+
+
+
+
+
+
+
