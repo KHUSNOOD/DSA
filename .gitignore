@@ -367,3 +367,56 @@ void replacepi(string s){
          replacepi(s.substr(1));
      }
 }
+
+
+*******Removing duplicate from string******
+
+string remov_dupl(string s){
+    if(s.size()==0){
+        return "";
+    }
+    char ch=s[0];
+    string ans=remov_dupl(s.substr(1));
+    if(ch==ans[0]){
+        return ans;
+    }
+    else{
+        return ch+ans;
+    }
+    
+}
+
+
+
+********pushing all 'x' to last of string *************
+
+string  pushbackx(string s){
+    if(s.length()==0){
+        return "";
+    }
+    char ch=s[0];
+    string ans=pushbackx(s.substr(1));
+    if(ch=='x'){
+        return ans+ch;
+    }
+    else{
+        return ch+ans;
+    }
+    
+}
+
+
+
+**********subsequence of string*************
+
+void subsequence(string s, string ans){
+    if(s.length()==0){
+        cout<<ans<<endl;
+        return;
+    }
+    char ch=s[0];
+    string ros=s.substr(1);
+    subsequence(ros,ans);
+    subsequence(ros,ans+ch);
+}
+
